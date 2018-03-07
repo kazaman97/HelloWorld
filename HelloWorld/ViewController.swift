@@ -11,14 +11,25 @@ class ViewController: UIViewController {
 
     // IBOutletでstoryboardから紐付け
     @IBOutlet weak var helloLabel: UILabel!
+    @IBOutlet weak var changeBtn: UIButton!
+    
+    var count = 0
+    
     
     @IBAction func changeButton(_ sender: Any) {
+        count += 1
         let hl = helloLabel
-        hl?.text = "こんにちは"
+        if (count % 2 == 0) {
+            hl?.text = "こんにちは"
+        }
+        else {
+            hl?.text = "HelloWorld"
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {

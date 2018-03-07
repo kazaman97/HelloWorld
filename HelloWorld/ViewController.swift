@@ -13,17 +13,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var helloLabel: UILabel!
     @IBOutlet weak var changeBtn: UIButton!
     
-    var count = 0
+    var count = false
     
-    
+    // ボタンを押したら実行される
     @IBAction func changeButton(_ sender: Any) {
-        count += 1
         let hl = helloLabel
-        if (count % 2 == 0) {
+        // countを用いてボタンを押した時の処理を切り替える
+        if (count == true) {
             hl?.text = "こんにちは"
+            count = false
         }
         else {
             hl?.text = "HelloWorld"
+            count = true
         }
     }
     override func viewDidLoad() {
